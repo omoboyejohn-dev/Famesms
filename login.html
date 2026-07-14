@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login | FameSMS</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="responsive.css">
+
+<style>
+
+body{
+
+font-family:'Poppins',sans-serif;
+background:#050816;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+padding:30px;
+
+}
+
+.login-box{
+
+width:100%;
+max-width:450px;
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,.08);
+border-radius:20px;
+padding:40px;
+
+}
+
+.login-box h1{
+
+text-align:center;
+margin-bottom:10px;
+
+}
+
+.login-box p{
+
+text-align:center;
+color:#b8c0d4;
+margin-bottom:30px;
+
+}
+
+.form-group{
+
+margin-bottom:20px;
+
+}
+
+.form-group label{
+
+display:block;
+margin-bottom:8px;
+
+}
+
+.form-group input{
+
+width:100%;
+padding:14px;
+border:none;
+outline:none;
+border-radius:10px;
+background:#111827;
+color:#fff;
+
+}
+
+.login-btn{
+
+width:100%;
+padding:16px;
+border:none;
+border-radius:10px;
+background:linear-gradient(135deg,#4f46e5,#00d4ff);
+color:#fff;
+font-size:17px;
+cursor:pointer;
+
+}
+
+.login-btn:hover{
+
+opacity:.95;
+
+}
+
+.register-link{
+
+margin-top:25px;
+text-align:center;
+
+}
+
+.register-link a{
+
+color:#00d4ff;
+text-decoration:none;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="login-box">
+
+<h1>Welcome Back</h1>
+
+<p>Login to your FameSMS account.</p>
+
+<form id="loginForm">
+
+  <!-- Email -->
+
+<div class="form-group">
+
+<label for="email">Email Address</label>
+
+<input
+type="email"
+id="email"
+placeholder="Enter your email"
+required>
+
+</div>
+
+<!-- Password -->
+
+<div class="form-group">
+
+<label for="password">Password</label>
+
+<input
+type="password"
+id="password"
+placeholder="Enter your password"
+required>
+
+</div>
+
+<!-- Remember Me & Forgot Password -->
+
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:25px;flex-wrap:wrap;gap:10px;">
+
+<label style="display:flex;align-items:center;gap:8px;cursor:pointer;">
+
+<input type="checkbox" id="remember">
+
+Remember Me
+
+</label>
+
+<a href="#" style="color:#00d4ff;text-decoration:none;">
+
+Forgot Password?
+
+</a>
+
+</div>
+
+<!-- Login Button -->
+
+<button
+type="submit"
+class="login-btn">
+
+Login
+
+</button>
+
+<div class="register-link">
+
+Don't have an account?
+
+<a href="register.html">
+
+Create Account
+
+</a>
+
+</div>
+
+</form>
+
+</div>
