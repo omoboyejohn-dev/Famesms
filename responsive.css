@@ -603,3 +603,58 @@ body{
 
 
 }
+
+.menu-btn{
+
+    display:none;
+
+    background:none;
+
+    border:none;
+
+    color:white;
+
+    font-size:28px;
+
+    cursor:pointer;
+
+}
+
+
+
+@media(max-width:768px){
+
+
+.menu-btn{
+
+    display:block;
+
+}
+
+
+.sidebar{
+
+    transform:translateX(-100%);
+
+    transition:.3s;
+
+    z-index:1000;
+
+}
+
+
+.sidebar.show{
+
+    transform:translateX(0);
+
+}
+
+
+.main{
+
+    margin-left:0;
+
+}
+
+
+}
