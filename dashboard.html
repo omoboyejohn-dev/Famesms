@@ -8,13 +8,10 @@
 
 <title>Dashboard | FameSMS</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="responsive.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
 
@@ -27,12 +24,15 @@
 <div class="sidebar" id="sidebar">
 
 
-<div class="logo">
+<div class="dashboard-logo">
 ⚡ FameSMS
 </div>
 
 
-<div class="menu">
+
+<div class="menu-title">
+MAIN
+</div>
 
 
 <a class="active" href="dashboard.html">
@@ -40,57 +40,77 @@
 </a>
 
 
-<a href="wallet.html">
+
+<div class="menu-title">
+ACCOUNT
+</div>
+
+
+<a href="#">
 💰 Wallet
 </a>
 
 
-<a href="deposit.html">
+<a href="#">
 ➕ Deposit Wallet
 </a>
 
 
-<a href="usa-numbers.html">
+
+
+<div class="menu-title">
+SMS NUMBERS
+</div>
+
+
+<a href="#">
 🇺🇸 USA Numbers
 </a>
 
 
-<a href="countries.html">
-🌍 All Countries
+<a href="#">
+🌏 All Countries
 </a>
 
 
-<a href="services.html">
+
+
+<a href="#">
 📱 SMS Services
 </a>
 
 
-<a href="inbox.html">
+<a href="#">
 📨 SMS Inbox
 </a>
 
 
-<a href="transactions.html">
+<a href="#">
 📜 Transaction History
 </a>
 
 
-<a href="profile.html">
+
+<a href="#">
 👤 User Profile
 </a>
 
 
-<a href="settings.html">
+<a href="#">
 ⚙️ Settings
 </a>
+
+
+<a href="#">
+🗨 WhatsApp Channel
+</a>
+
 
 
 <a href="#" class="logout">
 🚪 Logout
 </a>
 
-
-</div>
 
 
 </div>
@@ -102,23 +122,27 @@
 <!-- Main Dashboard -->
 
 
-<div class="main">
+<div class="dashboard-main">
 
 
-<div class="topbar">
 
-<button class="menu-btn" id="menuBtn">
-☰
-</button>
+<div class="dashboard-header">
 
-<div>
-<h1>Dashboard</h1>
-<p>Welcome back to FameSMS 👋</p>
-</div>
 
-<div class="user">
-👤 User
-</div>
+<h1>
+Dashboard
+</h1>
+
+
+<p>
+Welcome back to FameSMS 👋
+</p>
+
+
+<h3>
+👤 User Name
+</h3>
+
 
 </div>
 
@@ -129,21 +153,17 @@
 <!-- Dashboard Cards -->
 
 
-<div class="cards">
+<div class="dashboard-cards">
 
 
 
-<div class="card">
-
-<div class="icon">
-💰
-</div>
+<div class="dashboard-card">
 
 <h3>
-Wallet Balance
+💰 Wallet Balance
 </h3>
 
-<h2 class="wallet-balance">
+<h2>
 ₦0.00
 </h2>
 
@@ -152,14 +172,11 @@ Wallet Balance
 
 
 
-<div class="card">
 
-<div class="icon">
-🇺🇸
-</div>
+<div class="dashboard-card">
 
 <h3>
-USA Numbers
+🇺🇸 USA Numbers
 </h3>
 
 <h2>
@@ -172,14 +189,10 @@ USA Numbers
 
 
 
-<div class="card">
-
-<div class="icon">
-🌍
-</div>
+<div class="dashboard-card">
 
 <h3>
-Countries
+🌏 All Countries
 </h3>
 
 <h2>
@@ -192,14 +205,10 @@ Countries
 
 
 
-<div class="card">
-
-<div class="icon">
-📩
-</div>
+<div class="dashboard-card">
 
 <h3>
-Active Numbers
+📱 Active Numbers
 </h3>
 
 <h2>
@@ -212,14 +221,10 @@ Active Numbers
 
 
 
-<div class="card">
-
-<div class="icon">
-📨
-</div>
+<div class="dashboard-card">
 
 <h3>
-SMS Received
+📨 SMS Received
 </h3>
 
 <h2>
@@ -232,14 +237,10 @@ SMS Received
 
 
 
-<div class="card">
-
-<div class="icon">
-📱
-</div>
+<div class="dashboard-card">
 
 <h3>
-Available Services
+📱 Available Services
 </h3>
 
 <h2>
@@ -250,16 +251,18 @@ Available Services
 
 
 
-
 </div>
 
 
 
 </div>
+
+
 
 
 <script type="module" src="dashboard.js"></script>
-  
+
+
 </body>
 
 </html>
