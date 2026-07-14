@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -7,42 +8,75 @@
 
 <title>Create Account | FameSMS</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="responsive.css">
 
 <style>
 
-body{
-    font-family:'Poppins',sans-serif;
-    background:#050816;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
-    padding:30px;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
+
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#050816;
+
+    color:white;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+
+}
+
+
 
 .register-box{
 
     width:100%;
-    max-width:520px;
 
-    background:rgba(255,255,255,.05);
+    max-width:450px;
 
-    border:1px solid rgba(255,255,255,.08);
+    background:rgba(255,255,255,0.06);
+
+    border:1px solid rgba(255,255,255,.1);
 
     border-radius:20px;
 
-    backdrop-filter:blur(20px);
+    padding:35px;
 
-    padding:40px;
+    backdrop-filter:blur(15px);
 
 }
+
+
+
+.logo{
+
+    text-align:center;
+
+    font-size:32px;
+
+    font-weight:700;
+
+    color:#00d4ff;
+
+    margin-bottom:10px;
+
+}
+
+
 
 .register-box h1{
 
@@ -51,6 +85,8 @@ body{
     margin-bottom:10px;
 
 }
+
+
 
 .register-box p{
 
@@ -62,11 +98,15 @@ body{
 
 }
 
+
+
 .form-group{
 
     margin-bottom:18px;
 
 }
+
+
 
 .form-group label{
 
@@ -78,8 +118,10 @@ body{
 
 }
 
-.form-group input,
-.form-group select{
+
+
+.form-group input{
+
 
     width:100%;
 
@@ -99,11 +141,14 @@ body{
 
 }
 
+
+
 .create-btn{
+
 
     width:100%;
 
-    padding:16px;
+    padding:15px;
 
     border:none;
 
@@ -115,17 +160,21 @@ body{
 
     font-size:17px;
 
+    font-weight:600;
+
     cursor:pointer;
 
-    margin-top:15px;
-
 }
+
+
 
 .create-btn:hover{
 
-    opacity:.95;
+    opacity:.9;
 
 }
+
+
 
 .login-link{
 
@@ -133,7 +182,11 @@ body{
 
     margin-top:25px;
 
+    color:#b8c0d4;
+
 }
+
+
 
 .login-link a{
 
@@ -141,29 +194,49 @@ body{
 
     text-decoration:none;
 
+    font-weight:600;
+
 }
+
+
 
 </style>
 
+
 </head>
+
 
 <body>
 
+
 <div class="register-box">
+
+
+<div class="logo">
+
+⚡ FameSMS
+
+</div>
+
 
 <h1>Create Account</h1>
 
-<p>Create your FameSMS account in less than a minute.</p>
+
+<p>
+Create your FameSMS account quickly.
+</p>
+
+
 
 <form id="registerForm">
 
-  <!-- Full Name -->
+
 
 <div class="form-group">
 
-<label for="fullname">Full Name</label>
+<label>Full Name</label>
 
-<input
+<input 
 type="text"
 id="fullname"
 placeholder="Enter your full name"
@@ -171,129 +244,58 @@ required>
 
 </div>
 
-<!-- Username -->
+
+
 
 <div class="form-group">
 
-<label for="username">Username</label>
+<label>Gmail Address</label>
 
-<input
-type="text"
-id="username"
-placeholder="Choose a username"
-required>
-
-</div>
-
-<!-- Email -->
-
-<div class="form-group">
-
-<label for="email">Email Address</label>
-
-<input
+<input 
 type="email"
 id="email"
-placeholder="Enter your email"
+placeholder="Enter your Gmail address"
 required>
 
 </div>
 
-<!-- Country -->
+
+
+
 
 <div class="form-group">
 
-<label for="country">Country</label>
+<label>Password</label>
 
-<select id="country" required>
-
-<option value="">Select Country</option>
-
-<option>Nigeria 🇳🇬</option>
-
-<option>United States 🇺🇸</option>
-
-<option>Canada 🇨🇦</option>
-
-<option>United Kingdom 🇬🇧</option>
-
-<option>Germany 🇩🇪</option>
-
-<option>France 🇫🇷</option>
-
-<option>Australia 🇦🇺</option>
-
-<option>Netherlands 🇳🇱</option>
-
-<option>India 🇮🇳</option>
-
-<option>Brazil 🇧🇷</option>
-
-</select>
-
-</div>
-
-<!-- Password -->
-
-<div class="form-group">
-
-<label for="password">Password</label>
-
-<input
+<input 
 type="password"
 id="password"
-placeholder="Create a password"
+placeholder="Create password"
 required>
 
 </div>
 
-<!-- Confirm Password -->
+
+
+
 
 <div class="form-group">
 
-<label for="confirmPassword">Confirm Password</label>
+<label>Confirm Password</label>
 
-<input
+<input 
 type="password"
 id="confirmPassword"
-placeholder="Confirm your password"
+placeholder="Confirm password"
 required>
 
 </div>
 
-<!-- Referral Code -->
 
-<div class="form-group">
 
-<label for="referral">Referral Code (Optional)</label>
 
-<input
-type="text"
-id="referral"
-placeholder="Referral code">
 
-</div>
-
-<!-- Terms -->
-
-<div class="form-group">
-
-<label>
-
-<input
-type="checkbox"
-id="terms"
-required>
-
-I agree to the Terms & Conditions
-
-</label>
-
-</div>
-
-<!-- Register Button -->
-
-<button
+<button 
 type="submit"
 class="create-btn">
 
@@ -301,20 +303,33 @@ Create Account
 
 </button>
 
+
+
+
 <div class="login-link">
 
 Already have an account?
 
 <a href="login.html">
-
-Login Here
-
+Login
 </a>
 
+
 </div>
+
+
 
 </form>
 
+
+
 </div>
 
-  <script type="module" src="register.js"></script>
+
+
+<script src="register.js"></script>
+
+
+</body>
+
+</html>
