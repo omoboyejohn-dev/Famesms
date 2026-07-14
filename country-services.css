@@ -1,0 +1,45 @@
+.services-container{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+    margin-top:20px;
+}
+
+.service-card{
+    background:#111827;
+    border:1px solid #26324a;
+    border-radius:20px;
+    padding:20px;
+    transition:.3s;
+}
+
+.service-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px #0008;
+}
+
+.service-title{
+    font-size:22px;
+    font-weight:700;
+}
+
+.price{
+    color:#ff4d5a;
+    font-size:18px;
+    margin:10px 0;
+}
+
+.buy-btn{
+    width:100%;
+    background:#ff4655;
+    color:white;
+    border:none;
+    padding:12px;
+    border-radius:12px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.buy-btn:hover{
+    background:#ff2338;
+}
