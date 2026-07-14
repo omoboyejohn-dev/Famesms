@@ -105,3 +105,31 @@ document.getElementById("refreshBtn").addEventListener("click", () => {
     location.reload();
 
 });
+
+// Recent Activations (Temporary)
+
+const activationTable = document.getElementById("activationTable");
+
+function loadActivations() {
+
+    activationTable.innerHTML = `
+
+        <tr>
+
+            <td colspan="6" style="text-align:center;padding:30px;color:#b8c0d4;">
+
+                No recent activations.
+
+                <br><br>
+
+                Purchase an SMS number to see your activations here.
+
+            </td>
+
+        </tr>
+
+    `;
+
+}
+
+loadActivations();
