@@ -65,15 +65,29 @@ onAuthStateChanged(auth, async (user)=>{
 // Logout
 
 
-document.querySelector(".logout").onclick = ()=>{
+const logoutBtn = document.querySelector(".logout");
 
 
-    signOut(auth)
-    .then(()=>{
+if(logoutBtn){
 
-        window.location.href="login.html";
+    logoutBtn.addEventListener("click",(e)=>{
+
+        e.preventDefault();
+
+
+        signOut(auth)
+        .then(()=>{
+
+            window.location.href="login.html";
+
+        })
+        .catch((error)=>{
+
+            console.log(error.message);
+
+        });
+
 
     });
 
-
-};
+}
