@@ -1,0 +1,432 @@
+/* ==========================================
+   TABLETS (1024px)
+========================================== */
+
+@media (max-width:1024px){
+
+.navbar{
+
+padding:18px 25px;
+
+}
+
+.hero{
+
+flex-direction:column;
+
+text-align:center;
+
+padding:140px 25px 80px;
+
+}
+
+.hero-content{
+
+order:2;
+
+}
+
+.hero-image{
+
+order:1;
+
+margin-bottom:50px;
+
+}
+
+.hero h1{
+
+font-size:52px;
+
+}
+
+.hero-text{
+
+margin:auto auto 35px;
+
+}
+
+.hero-buttons{
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+}
+
+.hero-country{
+
+justify-content:center;
+
+}
+
+.features-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.steps{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.platform-grid{
+
+grid-template-columns:repeat(3,1fr);
+
+}
+
+.footer-container{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+/* ==========================================
+   MOBILE MENU (991px)
+========================================== */
+
+@media (max-width:991px){
+
+.menu-btn{
+
+display:block;
+
+}
+
+.nav-links{
+
+position:absolute;
+
+top:85px;
+
+left:-100%;
+
+width:100%;
+
+background:#08111f;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+padding:35px 0;
+
+transition:.4s;
+
+border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+.nav-links.active{
+
+left:0;
+
+}
+
+.nav-links li{
+
+margin:18px 0;
+
+}
+
+.nav-buttons{
+
+display:none;
+
+}
+
+}
+
+/* ==========================================
+   MOBILE DEVICES (768px)
+========================================== */
+
+@media (max-width:768px){
+
+section{
+    padding:70px 20px;
+}
+
+.navbar{
+    padding:15px 20px;
+}
+
+.logo{
+    font-size:24px;
+}
+
+.logo i{
+    font-size:26px;
+}
+
+.hero{
+    padding:120px 20px 60px;
+    gap:40px;
+}
+
+.hero h1{
+    font-size:38px;
+    line-height:1.3;
+}
+
+.hero-text{
+    font-size:16px;
+}
+
+.hero-buttons{
+    flex-direction:column;
+    align-items:center;
+}
+
+.primary-btn,
+.secondary-btn{
+    width:100%;
+    max-width:320px;
+    text-align:center;
+}
+
+.hero-country{
+    flex-direction:column;
+    align-items:center;
+}
+
+.country-box{
+    width:100%;
+    max-width:320px;
+    text-align:center;
+}
+
+.hero-image img{
+    max-width:100%;
+}
+
+/* Features */
+
+.features-grid{
+    grid-template-columns:1fr;
+}
+
+.feature-card{
+    padding:30px 25px;
+}
+
+.feature-card h3{
+    font-size:22px;
+}
+
+/* Steps */
+
+.steps{
+    grid-template-columns:1fr;
+}
+
+.step{
+    padding:35px 25px;
+}
+
+.step h3{
+    font-size:22px;
+}
+
+/* Platforms */
+
+.platform-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.platform-card{
+    padding:30px 20px;
+}
+
+.platform-card i{
+    font-size:45px;
+}
+
+.platform-card span{
+    font-size:17px;
+}
+
+/* CTA */
+
+.cta{
+    padding:60px 25px;
+    margin:70px 20px;
+}
+
+.cta h2{
+    font-size:34px;
+}
+
+.cta p{
+    font-size:16px;
+}
+
+.cta-buttons{
+    flex-direction:column;
+    align-items:center;
+}
+
+/* Footer */
+
+.footer-container{
+    grid-template-columns:1fr;
+    text-align:center;
+}
+
+.footer-box{
+    margin-bottom:20px;
+}
+
+.footer-box i{
+    margin-right:8px;
+}
+
+}
+
+/* ==========================================
+   SMALL MOBILE DEVICES (480px)
+========================================== */
+
+@media (max-width:480px){
+
+body{
+    overflow-x:hidden;
+}
+
+.logo{
+    font-size:20px;
+}
+
+.logo i{
+    font-size:22px;
+}
+
+.hero{
+    padding-top:100px;
+}
+
+.hero h1{
+    font-size:30px;
+}
+
+.tag{
+    font-size:12px;
+    padding:7px 15px;
+}
+
+.hero-text{
+    font-size:15px;
+    line-height:1.7;
+}
+
+.primary-btn,
+.secondary-btn{
+    width:100%;
+    padding:15px;
+    font-size:15px;
+}
+
+.country-box{
+    font-size:15px;
+    padding:14px;
+}
+
+.section-title h2{
+    font-size:30px;
+}
+
+.section-title p{
+    font-size:15px;
+}
+
+.feature-card{
+    padding:25px 20px;
+}
+
+.feature-card i{
+    width:60px;
+    height:60px;
+    font-size:24px;
+}
+
+.feature-card h3{
+    font-size:20px;
+}
+
+.step{
+    padding:25px 20px;
+}
+
+.step i{
+    width:65px;
+    height:65px;
+    font-size:26px;
+}
+
+.step-number{
+    font-size:36px;
+}
+
+.step h3{
+    font-size:20px;
+}
+
+.platform-grid{
+    grid-template-columns:1fr;
+}
+
+.platform-card{
+    padding:25px 15px;
+}
+
+.platform-card i{
+    font-size:42px;
+}
+
+.platform-card span{
+    font-size:16px;
+}
+
+.cta{
+    padding:45px 20px;
+    border-radius:20px;
+}
+
+.cta h2{
+    font-size:28px;
+}
+
+.cta p{
+    font-size:15px;
+}
+
+.footer-container{
+    padding:50px 20px;
+}
+
+.footer-bottom{
+    font-size:14px;
+}
+
+}
+
+/* ==========================================
+   LARGE SCREENS (1400px+)
+========================================== */
+
+@media (min-width:1400px){
+
+.hero,
+.features,
+.how-it-works,
+.platforms,
+.footer-container{
+
+    max-width:
