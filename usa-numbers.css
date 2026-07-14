@@ -1,0 +1,259 @@
+/* ==========================================
+   FAMESMS USA NUMBERS
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#050816;
+
+    color:#fff;
+
+    padding:20px 20px 90px;
+
+}
+
+.container{
+
+    max-width:1200px;
+
+    margin:auto;
+
+}
+
+/* Header */
+
+.header{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+}
+
+.back-btn{
+
+    display:inline-block;
+
+    margin-bottom:20px;
+
+    color:#00d4ff;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+.header h1{
+
+    font-size:36px;
+
+    margin-bottom:10px;
+
+}
+
+.header p{
+
+    color:#b8c0d4;
+
+}
+
+/* Search */
+
+.search-box{
+
+    margin-bottom:30px;
+
+}
+
+.search-box input{
+
+    width:100%;
+
+    padding:16px 20px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:14px;
+
+    background:#111827;
+
+    color:#fff;
+
+    font-size:16px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.search-box input:focus{
+
+    border-color:#00d4ff;
+
+}
+
+/* Services Grid */
+
+.services-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+
+}
+
+/* Service Card */
+
+.service-card{
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    padding:25px;
+
+    text-align:center;
+
+    transition:.3s;
+
+}
+
+.service-card:hover{
+
+    transform:translateY(-5px);
+
+    border-color:#00d4ff;
+
+}
+
+.service-card h3{
+
+    font-size:22px;
+
+    margin-bottom:15px;
+
+}
+
+.price{
+
+    color:#00d4ff;
+
+    font-size:24px;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+}
+
+.buy-btn{
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:linear-gradient(135deg,#4f46e5,#00d4ff);
+
+    color:#fff;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.buy-btn:hover{
+
+    opacity:.9;
+
+}
+
+/* Bottom Navigation */
+
+.bottom-nav{
+
+    position:fixed;
+
+    bottom:0;
+
+    left:0;
+
+    width:100%;
+
+    background:#0b1120;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    display:flex;
+
+    justify-content:space-around;
+
+    padding:18px 0;
+
+}
+
+.bottom-nav a{
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+/* Responsive */
+
+@media(max-width:992px){
+
+.services-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:600px){
+
+.services-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.header h1{
+
+    font-size:28px;
+
+}
+
+.service-card{
+
+    padding:20px;
+
+}
+
+}
