@@ -1072,3 +1072,160 @@ footer{
     padding:0 35px;
 
 }
+
+/* ==========================================
+   FAMESMS USER DASHBOARD
+========================================== */
+
+
+/* Sidebar */
+
+.sidebar{
+
+    width:260px;
+    height:100vh;
+    position:fixed;
+    left:0;
+    top:0;
+
+    background:#0b1120;
+
+    padding:25px 20px;
+
+    border-right:1px solid rgba(255,255,255,.08);
+
+}
+
+
+.menu a{
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    color:#b8c0d4;
+
+    padding:14px;
+
+    margin-bottom:8px;
+
+    border-radius:12px;
+
+    transition:.3s;
+
+}
+
+
+.menu a:hover,
+.menu .active{
+
+    background:linear-gradient(135deg,#4f46e5,#00d4ff);
+
+    color:white;
+
+}
+
+
+
+/* Dashboard Main */
+
+.main{
+
+    margin-left:260px;
+
+    padding:30px;
+
+}
+
+
+
+.topbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:35px;
+
+}
+
+
+.user{
+
+    background:#111827;
+
+    padding:12px 20px;
+
+    border-radius:10px;
+
+}
+
+
+
+/* Dashboard Cards */
+
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+
+    gap:25px;
+
+}
+
+
+.card{
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(20px);
+
+    padding:25px;
+
+    border-radius:18px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.3s;
+
+}
+
+
+.card:hover{
+
+    transform:translateY(-5px);
+
+    border-color:#00d4ff;
+
+}
+
+
+.icon{
+
+    font-size:35px;
+
+    margin-bottom:15px;
+
+}
+
+
+.card h3{
+
+    color:#b8c0d4;
+
+    font-size:15px;
+
+}
+
+
+.card h2{
+
+    margin-top:10px;
+
+    font-size:30px;
+
+}
