@@ -430,3 +430,176 @@ body{
 .footer-container{
 
     max-width:
+
+       /* ==========================================
+   FAMESMS DASHBOARD RESPONSIVE
+========================================== */
+
+
+/* Tablet */
+
+@media(max-width:992px){
+
+    .sidebar{
+
+        width:220px;
+
+    }
+
+
+    .main{
+
+        margin-left:220px;
+
+        padding:25px;
+
+    }
+
+
+    .topbar h1{
+
+        font-size:26px;
+
+    }
+
+
+    .cards{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+
+
+/* Mobile */
+
+@media(max-width:768px){
+
+
+    .sidebar{
+
+        width:75px;
+
+        padding:20px 10px;
+
+    }
+
+
+
+    .logo{
+
+        font-size:0;
+
+        justify-content:center;
+
+    }
+
+
+    .logo::before{
+
+        content:"⚡";
+
+        font-size:28px;
+
+    }
+
+
+
+    .menu a{
+
+        justify-content:center;
+
+        font-size:0;
+
+        padding:14px 8px;
+
+    }
+
+
+    .menu a::first-letter{
+
+        font-size:22px;
+
+    }
+
+
+
+    .main{
+
+        margin-left:75px;
+
+        padding:20px;
+
+    }
+
+
+
+    .topbar{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:15px;
+
+    }
+
+
+
+    .cards{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+
+    .card{
+
+        padding:20px;
+
+    }
+
+
+}
+
+
+
+/* Small Phones */
+
+@media(max-width:480px){
+
+
+    .main{
+
+        padding:15px;
+
+    }
+
+
+    .topbar h1{
+
+        font-size:22px;
+
+    }
+
+
+    .user{
+
+        width:100%;
+
+        text-align:center;
+
+    }
+
+
+    .card h2{
+
+        font-size:26px;
+
+    }
+
+
+}
