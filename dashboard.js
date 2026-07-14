@@ -5,7 +5,6 @@ import {
     signOut
 } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js";
 
-
 import {
     doc,
     getDoc
@@ -13,106 +12,96 @@ import {
 
 
 
-// Check User Login
+// Check Login
 
-onAuthStateChanged(auth, async (user)=>{
+onAuthStateChanged(auth, async (user) => {
 
+    if (!user) {
 
-    if(!user){
-
-        window.location.href="login.html";
+        window.location.href = "login.html";
 
         return;
 
     }
 
+    try {
 
+        const userRef = doc(db, "users", user.uid);
 
-    const userRef = doc(db,"users",user.uid);
+        const userSnap = await getDoc(userRef);
 
+        if (userSnap.exists()) {
 
-    const userSnap = await getDoc(userRef);
+            const data = userSnap.data();
 
+            document.getElementById("username").textContent =
+                data.username || user.email;
 
+            document.getElementById("walletBalance").textContent =
+                "₦" + (data.wallet || 0).toFixed(2);
 
-    if(userSnap.exists()){
+        } else {
 
+            document.getElementById("username").textContent =
+                user.email;
 
-        const data = userSnap.data();
+            document.getElementById("walletBalance").textContent =
+                "₦0.00";
 
+        }
 
+    } catch (error) {
 
-        document.querySelector(".user").innerHTML =
-        "👤 " + data.username;
-
-
-
-        document.querySelector(".wallet-balance").innerHTML =
-        "₦" + data.wallet;
-
-
+        console.error(error);
 
     }
 
-
-
 });
 
 
 
+// Logout Function
 
+async function logoutUser() {
 
-// Logout
+    try {
 
+        await signOut(auth);
 
-const logoutBtn = document.querySelector(".logout");
+        window.location.href = "login.html";
 
+    } catch (error) {
 
-if(logoutBtn){
+        alert(error.message);
 
-    logoutBtn.addEventListener("click",(e)=>{
-
-        e.preventDefault();
-
-
-        signOut(auth)
-        .then(()=>{
-
-            window.location.href="login.html";
-
-        })
-        .catch((error)=>{
-
-            console.log(error.message);
-
-        });
-
-
-    });
+    }
 
 }
 
-const menuBtn = document.getElementById("menuBtn");
-const sidebar = document.getElementById("sidebar");
 
 
-menuBtn.addEventListener("click",()=>{
+// Top Logout Button
 
-    sidebar.classList.toggle("show");
+document.getElementById("logoutBtn").addEventListener("click", logoutUser);
+
+
+
+// Bottom Logout Button
+
+document.getElementById("bottomLogout").addEventListener("click", function(e){
+
+    e.preventDefault();
+
+    logoutUser();
 
 });
 
-// Mobile Menu
-
-const mobileMenuBtn = document.getElementById("mobileMenuBtn");
-
-const sidebar = document.getElementById("sidebar");
 
 
-mobileMenuBtn.addEventListener("click",()=>{
+// Refresh Button
 
+document.getElementById("refreshBtn").addEventListener("click", () => {
 
-    sidebar.classList.toggle("show");
-
+    location.reload();
 
 });
