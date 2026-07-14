@@ -1229,3 +1229,225 @@ footer{
     font-size:30px;
 
 }
+
+/* ==========================================
+   FAMESMS DASHBOARD DESIGN
+========================================== */
+
+
+/* Sidebar */
+
+.sidebar{
+
+    width:260px;
+
+    height:100vh;
+
+    position:fixed;
+
+    left:0;
+
+    top:0;
+
+    background:#0b1120;
+
+    padding:25px 20px;
+
+    border-right:1px solid rgba(255,255,255,.08);
+
+    overflow-y:auto;
+
+}
+
+
+
+.dashboard-logo{
+
+    font-size:26px;
+
+    font-weight:700;
+
+    color:#00d4ff;
+
+    margin-bottom:35px;
+
+}
+
+
+
+.menu-title{
+
+    color:#64748b;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    margin:20px 0 10px;
+
+}
+
+
+
+.sidebar a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:#b8c0d4;
+
+    padding:13px;
+
+    margin-bottom:8px;
+
+    border-radius:12px;
+
+    transition:.3s;
+
+    text-decoration:none;
+
+}
+
+
+
+.sidebar a:hover,
+.sidebar a.active{
+
+    background:linear-gradient(135deg,#4f46e5,#00d4ff);
+
+    color:white;
+
+}
+
+
+
+
+
+/* Dashboard Main */
+
+.dashboard-main{
+
+    margin-left:260px;
+
+    padding:40px;
+
+}
+
+
+
+.dashboard-header{
+
+    margin-bottom:35px;
+
+}
+
+
+
+.dashboard-header h1{
+
+    font-size:35px;
+
+    margin-bottom:10px;
+
+}
+
+
+
+.dashboard-header p{
+
+    color:#b8c0d4;
+
+    margin-bottom:8px;
+
+}
+
+
+
+.dashboard-header h3{
+
+    color:#00d4ff;
+
+}
+
+
+
+
+
+/* Dashboard Cards */
+
+.dashboard-cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:25px;
+
+}
+
+
+
+.dashboard-card{
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    padding:30px;
+
+    border-radius:20px;
+
+    transition:.3s;
+
+}
+
+
+
+.dashboard-card:hover{
+
+    transform:translateY(-5px);
+
+    border-color:#00d4ff;
+
+}
+
+
+
+.dashboard-card h3{
+
+    color:#b8c0d4;
+
+    font-size:16px;
+
+    font-weight:500;
+
+}
+
+
+
+.dashboard-card h2{
+
+    font-size:32px;
+
+    margin-top:15px;
+
+    color:white;
+
+}
+
+
+
+
+
+/* Logout */
+
+.logout{
+
+    margin-top:20px;
+
+}
