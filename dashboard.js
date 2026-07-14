@@ -101,3 +101,18 @@ menuBtn.addEventListener("click",()=>{
     sidebar.classList.toggle("show");
 
 });
+
+// Mobile Menu
+
+const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+
+const sidebar = document.getElementById("sidebar");
+
+
+mobileMenuBtn.addEventListener("click",()=>{
+
+
+    sidebar.classList.toggle("show");
+
+
+});
