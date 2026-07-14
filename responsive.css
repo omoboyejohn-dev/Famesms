@@ -658,3 +658,131 @@ body{
 
 
 }
+
+/* ==========================================
+   FAMESMS DASHBOARD RESPONSIVE
+========================================== */
+
+
+/* Tablet */
+
+@media(max-width:992px){
+
+
+.sidebar{
+
+    width:220px;
+
+}
+
+
+.dashboard-main{
+
+    margin-left:220px;
+
+    padding:25px;
+
+}
+
+
+.dashboard-cards{
+
+    gap:20px;
+
+}
+
+
+}
+
+
+
+
+
+/* Mobile */
+
+@media(max-width:768px){
+
+
+.sidebar{
+
+    width:260px;
+
+    transform:translateX(-100%);
+
+    transition:.3s;
+
+    z-index:1000;
+
+}
+
+
+
+.sidebar.show{
+
+    transform:translateX(0);
+
+}
+
+
+
+.dashboard-main{
+
+    margin-left:0;
+
+    padding:25px;
+
+}
+
+
+
+.dashboard-cards{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.dashboard-header h1{
+
+    font-size:28px;
+
+}
+
+
+
+}
+
+
+
+
+
+/* Small Phones */
+
+@media(max-width:480px){
+
+
+.dashboard-main{
+
+    padding:15px;
+
+}
+
+
+
+.dashboard-card{
+
+    padding:22px;
+
+}
+
+
+
+.dashboard-card h2{
+
+    font-size:28px;
+
+}
+
+
+}
