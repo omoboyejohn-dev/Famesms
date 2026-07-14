@@ -296,7 +296,9 @@ td{
 
 .cards{
 
-    grid-template-columns:1fr;
+    grid-template-columns:repeat(2,1fr);
+
+    gap:15px;
 
 }
 
@@ -315,13 +317,23 @@ td{
     justify-content:space-between;
 
 }
-
+   
 .card{
 
-    padding:22px;
+    padding:18px;
+
+    text-align:center;
 
 }
 
+.card h3{
+
+    font-size:18px;
+
+    line-height:1.4;
+
+}
+   
 .header h2{
 
     font-size:24px;
