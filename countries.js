@@ -26,7 +26,7 @@ function displayCountries(list){
 
         countriesGrid.innerHTML += `
 
-        <div class="card">
+        <div class="country-card">
 
             <h3>${country.name}</h3>
 
