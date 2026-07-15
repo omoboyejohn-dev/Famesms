@@ -341,3 +341,60 @@ td{
 }
 
 }
+
+.search-box{
+    width:100%;
+    padding:15px 18px;
+    margin:20px 0 30px;
+    border:none;
+    outline:none;
+    border-radius:14px;
+    background:#151c2c;
+    color:#fff;
+    font-size:16px;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.search-box::placeholder{
+    color:#9ca3af;
+}
+
+.buy-btn{
+    width:100%;
+    margin-top:18px;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(135deg,#4f46e5,#00d4ff);
+    color:#fff;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.buy-btn:hover{
+    opacity:.95;
+}
+
+.card{
+    padding:25px;
+    min-height:170px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.card h3{
+    font-size:24px;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+.logout-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:12px 22px;
+    border-radius:12px;
+    text-decoration:none;
+}
