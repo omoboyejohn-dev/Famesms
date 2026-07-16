@@ -1521,3 +1521,60 @@ footer{
 .buy-btn:hover{
     background:#ff2338;
 }
+
+/* ==========================================
+   FAMESMS STATS
+========================================== */
+
+.stats{
+
+    max-width:1300px;
+    margin:auto;
+    padding:20px 35px 90px;
+
+}
+
+.stats-container{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+
+}
+
+.stat-card{
+
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(20px);
+    border-radius:20px;
+    padding:35px 20px;
+    text-align:center;
+    transition:.35s;
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-8px);
+    border-color:#00d4ff;
+    box-shadow:0 20px 45px rgba(0,212,255,.15);
+
+}
+
+.stat-card h2{
+
+    font-size:42px;
+    color:#00d4ff;
+    margin-bottom:10px;
+    font-weight:700;
+
+}
+
+.stat-card p{
+
+    color:#b8c0d4;
+    font-size:18px;
+    font-weight:500;
+
+}
