@@ -1,19 +1,18 @@
 import { auth, db } from "./firebase.js";
 
 import {
-    createUserWithEmailAndPassword
+  createUserWithEmailAndPassword
 } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js";
 
 import {
-    doc,
-    setDoc,
-    serverTimestamp
+  doc,
+  setDoc,
+  serverTimestamp
 } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
 
 const form = document.getElementById("registerForm");
 
 form.addEventListener("submit", async (e) => {
-
     e.preventDefault();
 
     const fullname = document.getElementById("fullname").value.trim();
@@ -29,19 +28,8 @@ form.addEventListener("submit", async (e) => {
         return;
     }
 
-    if (!country) {
-        alert("Please select your country.");
-        return;
-    }
-
     try {
 
-        // Show loading screen immediately
-        document.getElementById("loadingScreen").style.display = "flex";
-        document.getElementById("loadingText").innerHTML =
-            "Creating your account...";
-
-        // Create Authentication account
         const userCredential = await createUserWithEmailAndPassword(
             auth,
             email,
@@ -50,7 +38,6 @@ form.addEventListener("submit", async (e) => {
 
         const user = userCredential.user;
 
-        // Save user to Firestore
         await setDoc(doc(db, "users", user.uid), {
             fullname,
             username,
@@ -62,38 +49,24 @@ form.addEventListener("submit", async (e) => {
             createdAt: serverTimestamp()
         });
 
-        // Update loading message
-        document.getElementById("loadingText").innerHTML =
-            "✅ Account created successfully!<br>Redirecting...";
+        const loading = document.getElementById("loadingScreen");
+        const text = document.getElementById("loadingText");
 
-        // Redirect after 3 seconds
+        if (loading && text) {
+            loading.style.display = "flex";
+            text.innerHTML =
+                "Account created successfully!<br>Setting up your account...";
+        }
+
         setTimeout(() => {
             window.location.href = "welcome.html";
         }, 3000);
 
     } catch (error) {
 
-        // Hide loading screen if registration fails
-        document.getElementById("loadingScreen").style.display = "none";
+        console.error(error);
 
-        switch (error.code) {
-
-            case "auth/email-already-in-use":
-                alert("This email is already registered.");
-                break;
-
-            case "auth/invalid-email":
-                alert("Please enter a valid email address.");
-                break;
-
-            case "auth/weak-password":
-                alert("Password must be at least 6 characters.");
-                break;
-
-            default:
-                alert(error.message);
-
-        }
+        alert(error.code + "\n\n" + error.message);
 
     }
 
