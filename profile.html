@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Profile | FameSMS</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="dashboard.css">
+
+</head>
+<body>
+
+<div class="container">
+
+<div class="header">
+    <h2>👤 Profile</h2>
+</div>
+
+<div class="card">
+
+<h3 style="margin-bottom:25px;">Change Password</h3>
+
+<form id="passwordForm">
+
+<input
+type="password"
+id="currentPassword"
+placeholder="Current Password"
+class="search-box"
+required>
+
+<input
+type="password"
+id="newPassword"
+placeholder="New Password"
+class="search-box"
+required>
+
+<input
+type="password"
+id="confirmPassword"
+placeholder="Confirm New Password"
+class="search-box"
+required>
+
+<button type="submit" class="buy-btn">
+Update Password
+</button>
+
+</form>
+
+<p id="message"
+style="margin-top:20px;text-align:center;font-weight:600;"></p>
+
+<br>
+
+<a href="dashboard.html" class="logout-btn" style="text-decoration:none;">
+← Back to Dashboard
+</a>
+
+</div>
+
+</div>
+
+<script type="module" src="profile.js"></script>
+
+</body>
+</html>
