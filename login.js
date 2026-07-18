@@ -28,10 +28,20 @@ form.addEventListener("submit", async (e) => {
 
         await signInWithEmailAndPassword(auth, email, password);
 
-        alert("Login successful!");
+        // Show loading screen
+document.getElementById("loadingScreen").style.display = "flex";
 
-        window.location.href = "welcome.html";
+// Change loading message
+document.getElementById("loadingText").innerHTML =
+"Login successful!<br>Preparing your dashboard...";
 
+// Redirect after 2.5 seconds
+setTimeout(() => {
+
+    window.location.href = "welcome.html";
+
+}, 2500);
+        
     } catch (error) {
 
         switch (error.code) {
