@@ -51,8 +51,7 @@ try {
 
     alert("Account created successfully!");  
 
-    window.location.href = "dashboard.html";  
-
+    window.location.href = "welcome.html";
 } catch (error) {  
 
     alert(error.message);  
