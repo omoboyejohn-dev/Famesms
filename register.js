@@ -29,33 +29,42 @@ if (password !== confirmPassword) {
     return;  
 }  
 
-try {  
+try {
 
-    const userCredential =  
-        await createUserWithEmailAndPassword(auth, email, password);  
+    const userCredential =
+        await createUserWithEmailAndPassword(auth, email, password);
 
-    const user = userCredential.user;  
+    const user = userCredential.user;
 
-    await setDoc(doc(db, "users", user.uid), {  
+    await setDoc(doc(db, "users", user.uid), {
 
-        fullname,  
-        username,  
-        email,  
-        country,  
-        referral,  
-        wallet: 0,  
-        currency: "NGN",  
-        createdAt: serverTimestamp()  
+        fullname,
+        username,
+        email,
+        country,
+        referral,
+        wallet: 0,
+        currency: "NGN",
+        createdAt: serverTimestamp()
 
-    });  
+    });
 
-    alert("Account created successfully!");  
+    // Show loading screen
+    document.getElementById("loadingScreen").style.display = "flex";
 
-    window.location.href = "welcome.html";
-} catch (error) {  
+    // Success message
+    document.getElementById("loadingText").innerHTML =
+    "Account created successfully!<br>Setting up your account...";
 
-    alert(error.message);  
+    // Redirect after 3 seconds
+    setTimeout(() => {
+
+        window.location.href = "welcome.html";
+
+    }, 3000);
+
+} catch (error) {
+
+    alert(error.message);
 
 }
-
-});
