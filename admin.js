@@ -122,6 +122,12 @@ wallet: wallet + Number(amount)
 
 });
 
+  import {
+collection,
+addDoc,
+serverTimestamp
+} from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
+
 const depositRef =
 doc(db,"depositRequests",depositId);
 
