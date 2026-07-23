@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -20,9 +22,18 @@
 <div class="header">
 
 <div>
+
 <h2>🛠 FameSMS Admin</h2>
+
 <p>Manage users, deposits and transactions.</p>
+
 </div>
+
+<div>
+
+<a href="deposit-history.html" class="history-btn">
+📜 Deposit History
+</a>
 
 <a href="dashboard.html" class="logout-btn">
 ← Dashboard
@@ -30,26 +41,40 @@
 
 </div>
 
+</div>
+
 <div class="cards">
 
 <div class="card">
+
 <h3>👥 Users</h3>
+
 <h2 id="totalUsers">0</h2>
+
 </div>
 
 <div class="card">
+
 <h3>💰 Total Wallet</h3>
+
 <h2 id="totalWallet">₦0.00</h2>
+
 </div>
 
 <div class="card">
+
 <h3>📥 Deposit Requests</h3>
+
 <h2 id="pendingDeposits">0</h2>
+
 </div>
 
 <div class="card">
+
 <h3>📦 Orders</h3>
-<h2>0</h2>
+
+<h2 id="totalOrders">0</h2>
+
 </div>
 
 </div>
@@ -76,7 +101,9 @@
 
 <th>Amount</th>
 
-<th>Reference</th>
+<th>Sender Name</th>
+
+<th>Session ID</th>
 
 <th>Status</th>
 
@@ -90,9 +117,9 @@
 
 <tr>
 
-<td colspan="5" style="text-align:center">
+<td colspan="6" style="text-align:center">
 
-No pending requests.
+No pending deposits.
 
 </td>
 
@@ -111,4 +138,5 @@ No pending requests.
 <script type="module" src="admin.js"></script>
 
 </body>
+
 </html>
