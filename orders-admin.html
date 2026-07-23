@@ -1,0 +1,92 @@
+import { db } from "./firebase.js";
+
+import {
+collection,
+getDocs
+} from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
+
+async function loadOrders(){
+
+const snapshot = await getDocs(collection(db,"orders"));
+
+const table = document.getElementById("ordersTable");
+
+table.innerHTML = "";
+
+if(snapshot.empty){
+
+table.innerHTML = `
+
+<tr>
+
+<td colspan="8" style="text-align:center;">
+
+No orders found.
+
+</td>
+
+</tr>
+
+`;
+
+return;
+
+}
+
+snapshot.forEach((order)=>{
+
+const data = order.data();
+
+let status = "";
+
+if(data.status==="Completed"){
+
+status = "🟢 Completed";
+
+}else if(data.status==="Expired"){
+
+status = "🔴 Expired";
+
+}else{
+
+status = "🟡 Active";
+
+}
+
+let date = "";
+
+if(data.createdAt){
+
+date = data.createdAt.toDate().toLocaleString();
+
+}
+
+table.innerHTML += `
+
+<tr>
+
+<td>${data.email}</td>
+
+<td>${data.country}</td>
+
+<td>${data.service}</td>
+
+<td>${data.number}</td>
+
+<td>₦${Number(data.price).toLocaleString()}</td>
+
+<td>${data.smsCode || "Waiting..."}</td>
+
+<td>${status}</td>
+
+<td>${date}</td>
+
+</tr>
+
+`;
+
+});
+
+}
+
+loadOrders();
