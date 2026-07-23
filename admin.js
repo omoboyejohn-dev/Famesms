@@ -2,86 +2,138 @@ import { db } from "./firebase.js";
 
 import {
 collection,
-getDocs
+getDocs,
+doc,
+getDoc,
+updateDoc
 } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
 
 async function loadDashboard(){
 
-    // Total Users
-    const usersSnapshot = await getDocs(collection(db,"users"));
+const usersSnapshot = await getDocs(collection(db,"users"));
 
-    document.getElementById("totalUsers").innerText =
-    usersSnapshot.size;
+document.getElementById("totalUsers").innerText =
+usersSnapshot.size;
 
-    // Total Wallet
-    let wallet = 0;
+let wallet = 0;
 
-    usersSnapshot.forEach((doc)=>{
+usersSnapshot.forEach((user)=>{
 
-        wallet += Number(doc.data().wallet || 0);
+wallet += Number(user.data().wallet || 0);
 
-    });
+});
 
-    document.getElementById("totalWallet").innerText =
-    "₦" + wallet.toLocaleString();
+document.getElementById("totalWallet").innerText =
+"₦"+wallet.toLocaleString();
 
-    // Deposit Requests
-    const depositSnapshot =
-    await getDocs(collection(db,"depositRequests"));
+const depositSnapshot =
+await getDocs(collection(db,"depositRequests"));
 
-    document.getElementById("pendingDeposits").innerText =
-    depositSnapshot.size;
+const table =
+document.getElementById("depositTable");
 
-    const table =
-    document.getElementById("depositTable");
+table.innerHTML="";
 
-    table.innerHTML = "";
+let pending=0;
 
-    if(depositSnapshot.empty){
+depositSnapshot.forEach((deposit)=>{
 
-        table.innerHTML = `
-        <tr>
-            <td colspan="5" style="text-align:center">
-                No pending requests.
-            </td>
-        </tr>
-        `;
+const data = deposit.data();
 
-        return;
+if(data.status==="Pending"){
 
-    }
+pending++;
 
-    depositSnapshot.forEach((doc)=>{
+table.innerHTML += `
 
-        const data = doc.data();
+<tr>
 
-        table.innerHTML += `
-        <tr>
+<td>${data.email}</td>
 
-            <td>${data.email}</td>
+<td>₦${Number(data.amount).toLocaleString()}</td>
 
-            <td>₦${Number(data.amount).toLocaleString()}</td>
+<td>${data.reference}</td>
 
-            <td>${data.reference}</td>
+<td>${data.status}</td>
 
-            <td>${data.status}</td>
+<td>
 
-            <td>
+<button
+class="approve-btn"
+onclick="approveDeposit('${deposit.id}','${data.uid}',${data.amount})">
 
-                <button class="approve-btn">
-                    Approve
-                </button>
+Approve
 
-                <button class="reject-btn">
-                    Reject
-                </button>
+</button>
 
-            </td>
+</td>
 
-        </tr>
-        `;
+</tr>
 
-    });
+`;
+
+}
+
+});
+
+document.getElementById("pendingDeposits").innerText =
+pending;
+
+if(pending===0){
+
+table.innerHTML=`
+
+<tr>
+
+<td colspan="5" style="text-align:center;">
+
+No pending deposits.
+
+</td>
+
+</tr>
+
+`;
+
+}
+
+}
+
+window.approveDeposit = async function(depositId,uid,amount){
+
+const userRef = doc(db,"users",uid);
+
+const userSnap = await getDoc(userRef);
+
+if(!userSnap.exists()){
+
+alert("User not found");
+
+return;
+
+}
+
+const wallet =
+Number(userSnap.data().wallet || 0);
+
+await updateDoc(userRef,{
+
+wallet: wallet + Number(amount)
+
+});
+
+const depositRef =
+doc(db,"depositRequests",depositId);
+
+await updateDoc(depositRef,{
+
+status:"Completed"
+
+});
+
+alert("Wallet credited successfully.");
+
+loadDashboard();
 
 }
 
