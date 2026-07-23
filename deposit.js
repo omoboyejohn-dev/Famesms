@@ -24,6 +24,11 @@ form.addEventListener("submit", async (e) => {
     const sender = document.getElementById("sender").value.trim();
     const reference = document.getElementById("reference").value.trim();
 
+    if (!amount || !sender || !reference) {
+        alert("Please fill in all fields.");
+        return;
+    }
+
     try {
 
         await addDoc(collection(db, "depositRequests"), {
@@ -43,13 +48,19 @@ form.addEventListener("submit", async (e) => {
 
         });
 
-        alert("Deposit request submitted successfully.\nPlease wait for approval.");
+        alert(
+`FameSMS says
+
+After payment, your wallet will be credited automatically.
+
+If your wallet balance is not updated within 10 minutes, please contact support.`
+        );
 
         form.reset();
 
     } catch (error) {
 
-        alert(error.message);
+        alert("Error: " + error.message);
 
     }
 
