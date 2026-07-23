@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Dashboard | FameSMS</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="dashboard.css">
+<link rel="stylesheet" href="admin.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+
+<div>
+<h2>🛠 FameSMS Admin</h2>
+<p>Manage users, deposits and transactions.</p>
+</div>
+
+<a href="dashboard.html" class="logout-btn">
+← Dashboard
+</a>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>👥 Users</h3>
+<h2 id="totalUsers">0</h2>
+</div>
+
+<div class="card">
+<h3>💰 Total Wallet</h3>
+<h2 id="totalWallet">₦0.00</h2>
+</div>
+
+<div class="card">
+<h3>📥 Deposit Requests</h3>
+<h2 id="pendingDeposits">0</h2>
+</div>
+
+<div class="card">
+<h3>📦 Orders</h3>
+<h2>0</h2>
+</div>
+
+</div>
+
+<div class="recent">
+
+<div class="recent-header">
+
+<h3>Pending Deposit Requests</h3>
+
+<button id="refreshBtn">🔄 Refresh</button>
+
+</div>
+
+<div class="table-wrapper">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>User</th>
+
+<th>Amount</th>
+
+<th>Reference</th>
+
+<th>Status</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody id="depositTable">
+
+<tr>
+
+<td colspan="5" style="text-align:center">
+
+No pending requests.
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+<script type="module" src="admin.js"></script>
+
+</body>
+</html>
