@@ -53,6 +53,8 @@ async function loadDashboard() {
 
                 <td>₦${Number(data.amount).toLocaleString()}</td>
 
+                <td>${data.sender}</td>
+
                 <td>${data.reference}</td>
 
                 <td>${data.status}</td>
@@ -63,7 +65,15 @@ async function loadDashboard() {
                     class="approve-btn"
                     onclick="approveDeposit('${deposit.id}','${data.uid}',${data.amount})">
 
-                    Approve
+                    ✅ Approve
+
+                    </button>
+
+                    <button
+                    class="reject-btn"
+                    onclick="rejectDeposit('${deposit.id}')">
+
+                    ❌ Reject
 
                     </button>
 
@@ -84,7 +94,7 @@ async function loadDashboard() {
         table.innerHTML = `
         <tr>
 
-            <td colspan="5" style="text-align:center;">
+            <td colspan="6" style="text-align:center;">
 
             No pending deposits.
 
@@ -105,7 +115,7 @@ window.approveDeposit = async function (depositId, uid, amount) {
 
     if (!userSnap.exists()) {
 
-        alert("User not found");
+        alert("User not found.");
 
         return;
 
@@ -114,14 +124,12 @@ window.approveDeposit = async function (depositId, uid, amount) {
     const wallet =
     Number(userSnap.data().wallet || 0);
 
-    // Update wallet
     await updateDoc(userRef, {
 
         wallet: wallet + Number(amount)
 
     });
 
-    // Save transaction history
     await addDoc(collection(db, "transactions"), {
 
         uid: uid,
@@ -136,7 +144,6 @@ window.approveDeposit = async function (depositId, uid, amount) {
 
     });
 
-    // Update deposit status
     const depositRef =
     doc(db, "depositRequests", depositId);
 
@@ -147,6 +154,23 @@ window.approveDeposit = async function (depositId, uid, amount) {
     });
 
     alert("Wallet credited successfully.");
+
+    loadDashboard();
+
+};
+
+window.rejectDeposit = async function (depositId) {
+
+    const depositRef =
+    doc(db, "depositRequests", depositId);
+
+    await updateDoc(depositRef, {
+
+        status: "Rejected"
+
+    });
+
+    alert("Deposit rejected.");
 
     loadDashboard();
 
