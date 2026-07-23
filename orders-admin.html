@@ -1,92 +1,95 @@
-import { db } from "./firebase.js";
+<!DOCTYPE html>
+<html lang="en">
 
-import {
-collection,
-getDocs
-} from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
+<head>
 
-async function loadOrders(){
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-const snapshot = await getDocs(collection(db,"orders"));
+<title>Orders Management | FameSMS</title>
 
-const table = document.getElementById("ordersTable");
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-table.innerHTML = "";
+<link rel="stylesheet" href="dashboard.css">
+<link rel="stylesheet" href="admin.css">
 
-if(snapshot.empty){
+</head>
 
-table.innerHTML = `
+<body>
+
+<div class="container">
+
+<div class="header">
+
+<div>
+
+<h2>📦 Orders Management</h2>
+
+<p>All purchased numbers.</p>
+
+</div>
+
+<a href="admin.html" class="logout-btn">
+
+← Admin Dashboard
+
+</a>
+
+</div>
+
+<div class="recent">
+
+<div class="table-wrapper">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>User</th>
+
+<th>Country</th>
+
+<th>Service</th>
+
+<th>Number</th>
+
+<th>Price</th>
+
+<th>SMS Code</th>
+
+<th>Status</th>
+
+<th>Date</th>
+
+</tr>
+
+</thead>
+
+<tbody id="ordersTable">
 
 <tr>
 
 <td colspan="8" style="text-align:center;">
 
-No orders found.
+Loading...
 
 </td>
 
 </tr>
 
-`;
+</tbody>
 
-return;
+</table>
 
-}
+</div>
 
-snapshot.forEach((order)=>{
+</div>
 
-const data = order.data();
+</div>
 
-let status = "";
+<script type="module" src="orders-admin.js"></script>
 
-if(data.status==="Completed"){
-
-status = "🟢 Completed";
-
-}else if(data.status==="Expired"){
-
-status = "🔴 Expired";
-
-}else{
-
-status = "🟡 Active";
-
-}
-
-let date = "";
-
-if(data.createdAt){
-
-date = data.createdAt.toDate().toLocaleString();
-
-}
-
-table.innerHTML += `
-
-<tr>
-
-<td>${data.email}</td>
-
-<td>${data.country}</td>
-
-<td>${data.service}</td>
-
-<td>${data.number}</td>
-
-<td>₦${Number(data.price).toLocaleString()}</td>
-
-<td>${data.smsCode || "Waiting..."}</td>
-
-<td>${status}</td>
-
-<td>${date}</td>
-
-</tr>
-
-`;
-
-});
-
-}
-
-loadOrders();
+</body>
+</html>
