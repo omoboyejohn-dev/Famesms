@@ -1,76 +1,68 @@
+import { auth, db } from "./firebase.js";
+
 import {
-getAuth,
-EmailAuthProvider,
-reauthenticateWithCredential,
-updatePassword
-}
-from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+doc,
+getDoc
+} from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
 
-import { app } from "./firebase.js";
+import {
+onAuthStateChanged,
+signOut
+} from "https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js";
 
-const auth = getAuth(app);
+onAuthStateChanged(auth, async (user) => {
 
-const form = document.getElementById("passwordForm");
-const message = document.getElementById("message");
+    if (!user) {
 
-form.addEventListener("submit", async (e)=>{
+        window.location.href = "login.html";
+        return;
 
-e.preventDefault();
+    }
 
-const currentPassword =
-document.getElementById("currentPassword").value;
+    try {
 
-const newPassword =
-document.getElementById("newPassword").value;
+        const userRef = doc(db, "users", user.uid);
 
-const confirmPassword =
-document.getElementById("confirmPassword").value;
+        const userSnap = await getDoc(userRef);
 
-if(newPassword!==confirmPassword){
+        if (userSnap.exists()) {
 
-message.style.color="red";
-message.textContent="Passwords do not match.";
-return;
+            const data = userSnap.data();
 
-}
+            document.getElementById("fullname").textContent =
+                data.fullname || "Not Available";
 
-const user=auth.currentUser;
+            document.getElementById("username").textContent =
+                data.username || "Not Available";
 
-if(!user){
+            document.getElementById("email").textContent =
+                data.email || user.email;
 
-location.href="login.html";
-return;
+            document.getElementById("country").textContent =
+                data.country || "Not Available";
 
-}
+            document.getElementById("wallet").textContent =
+                "₦" + Number(data.wallet || 0).toLocaleString();
 
-try{
+        }
 
-const credential=
-EmailAuthProvider.credential(
-user.email,
-currentPassword
-);
+    } catch (error) {
 
-await reauthenticateWithCredential(
-user,
-credential
-);
+        alert("Error loading profile: " + error.message);
 
-await updatePassword(
-user,
-newPassword
-);
+    }
 
-message.style.color="#00d4ff";
-message.textContent="Password updated successfully.";
+});
 
-form.reset();
+document.getElementById("logoutBtn")
+.addEventListener("click", async () => {
 
-}catch(error){
+    if (confirm("Are you sure you want to logout?")) {
 
-message.style.color="red";
-message.textContent=error.message;
+        await signOut(auth);
 
-}
+        window.location.href = "login.html";
+
+    }
 
 });
