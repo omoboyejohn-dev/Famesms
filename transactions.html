@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Transaction History | FameSMS</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="dashboard.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+
+<div>
+<h2>📜 Transaction History</h2>
+<p>View all your wallet transactions.</p>
+</div>
+
+<a href="dashboard.html" class="logout-btn">
+← Dashboard
+</a>
+
+</div>
+
+<div class="recent">
+
+<div class="table-wrapper">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Type</th>
+<th>Amount</th>
+<th>Status</th>
+<th>Date</th>
+
+</tr>
+
+</thead>
+
+<tbody id="transactionTable">
+
+<tr>
+
+<td colspan="4" style="text-align:center">
+
+Loading...
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+<script type="module" src="transactions.js"></script>
+
+</body>
+</html>
