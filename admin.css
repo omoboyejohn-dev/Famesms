@@ -73,36 +73,123 @@ th{
     background:#1f2937;
     padding:15px;
     text-align:left;
+    white-space:nowrap;
 }
 
 td{
     padding:15px;
     border-top:1px solid rgba(255,255,255,.08);
+    white-space:nowrap;
 }
+
+/* ===============================
+   BUTTONS
+================================ */
 
 .approve-btn{
     background:#22c55e;
     color:#fff;
     border:none;
-    padding:8px 14px;
-    border-radius:8px;
+    padding:10px 18px;
+    border-radius:10px;
     cursor:pointer;
+    font-weight:600;
+    transition:.3s;
     margin-right:8px;
+}
+
+.approve-btn:hover{
+    background:#16a34a;
 }
 
 .reject-btn{
     background:#ef4444;
     color:#fff;
     border:none;
-    padding:8px 14px;
-    border-radius:8px;
+    padding:10px 18px;
+    border-radius:10px;
     cursor:pointer;
+    font-weight:600;
+    transition:.3s;
 }
 
-.approve-btn:hover,
 .reject-btn:hover{
-    opacity:.9;
+    background:#dc2626;
 }
+
+/* ===============================
+   STATUS BADGES
+================================ */
+
+.status-pending{
+    background:#f59e0b;
+    color:#fff;
+    padding:6px 14px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:600;
+}
+
+.status-completed{
+    background:#22c55e;
+    color:#fff;
+    padding:6px 14px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:600;
+}
+
+.status-rejected{
+    background:#ef4444;
+    color:#fff;
+    padding:6px 14px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:600;
+}
+
+/* ===============================
+   HISTORY BUTTON
+================================ */
+
+.history-btn{
+    display:inline-block;
+    margin-right:10px;
+    padding:12px 20px;
+    background:#2563eb;
+    color:#fff;
+    text-decoration:none;
+    border-radius:10px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.history-btn:hover{
+    background:#1d4ed8;
+}
+
+/* ===============================
+   REFRESH BUTTON
+================================ */
+
+#refreshBtn{
+    background:#06b6d4;
+    color:#fff;
+    border:none;
+    padding:10px 18px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:600;
+    transition:.3s;
+}
+
+#refreshBtn:hover{
+    background:#0891b2;
+}
+
+/* ===============================
+   MOBILE
+================================ */
 
 @media(max-width:768px){
 
@@ -114,9 +201,17 @@ td{
     font-size:24px;
 }
 
-th,td{
+th,
+td{
     font-size:14px;
     padding:12px;
+}
+
+.history-btn,
+.logout-btn{
+    display:block;
+    margin-bottom:10px;
+    text-align:center;
 }
 
 }
