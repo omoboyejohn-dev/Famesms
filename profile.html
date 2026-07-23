@@ -1,70 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Profile | FameSMS</title>
+<title>My Profile | FameSMS</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="dashboard.css">
 
+<style>
+
+.profile-box{
+
+background:#111827;
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:20px;
+
+padding:30px;
+
+margin-top:30px;
+
+}
+
+.profile-item{
+
+display:flex;
+
+justify-content:space-between;
+
+padding:16px 0;
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.profile-item:last-child{
+
+border-bottom:none;
+
+}
+
+.profile-title{
+
+color:#94a3b8;
+
+}
+
+.profile-value{
+
+font-weight:600;
+
+color:#fff;
+
+}
+
+.action-btn{
+
+display:block;
+
+width:100%;
+
+margin-top:20px;
+
+padding:15px;
+
+border:none;
+
+border-radius:12px;
+
+font-size:16px;
+
+font-weight:600;
+
+cursor:pointer;
+
+}
+
+.edit-btn{
+
+background:#2563eb;
+
+color:#fff;
+
+}
+
+.password-btn{
+
+background:#22c55e;
+
+color:#fff;
+
+}
+
+.logout-btn2{
+
+background:#ef4444;
+
+color:#fff;
+
+}
+
+</style>
+
 </head>
+
 <body>
 
 <div class="container">
 
 <div class="header">
-    <h2>👤 Profile</h2>
+
+<div>
+
+<h2>👤 My Profile</h2>
+
+<p>Manage your FameSMS account.</p>
+
 </div>
 
-<div class="card">
+<a href="dashboard.html" class="logout-btn">
 
-<h3 style="margin-bottom:25px;">Change Password</h3>
+← Dashboard
 
-<form id="passwordForm">
-
-<input
-type="password"
-id="currentPassword"
-placeholder="Current Password"
-class="search-box"
-required>
-
-<input
-type="password"
-id="newPassword"
-placeholder="New Password"
-class="search-box"
-required>
-
-<input
-type="password"
-id="confirmPassword"
-placeholder="Confirm New Password"
-class="search-box"
-required>
-
-<button type="submit" class="buy-btn">
-Update Password
-</button>
-
-</form>
-
-<p id="message"
-style="margin-top:20px;text-align:center;font-weight:600;"></p>
-
-<br>
-
-<a href="dashboard.html" class="logout-btn" style="text-decoration:none;">
-← Back to Dashboard
 </a>
 
 </div>
 
+<div class="profile-box">
+
+<div class="profile-item">
+
+<span class="profile-title">Full Name</span>
+
+<span class="profile-value" id="fullname">Loading...</span>
+
 </div>
 
-<script type="module" src="profile.js"></script>
+<div class="profile-item">
 
-</body>
-</html>
+<span class="profile-title">Username</span>
+
+<span class="profile-value" id="username">Loading...</span>
+
+</div>
+
+<div class="profile-item">
+
+<span class="profile-title">Email</span>
+
+<span class="profile-value" id="email">Loading...</span>
+
+</div>
+
+<div class="profile-item">
+
+<span class="profile-title">Country</span>
+
+<span class="profile-value" id="country">Loading...</span>
+
+</div>
+
+<div class="profile-item">
+
+<span class="profile-title">Wallet Balance</span>
+
+<span class="profile-value" id="wallet">₦0</span>
+
+</div>
+
+<button class="action-btn edit-btn">
+
+✏️ Edit Profile
+
+</button>
+
+<button class="action-btn password-btn">
+
+🔒 Change Password
+
+</button
